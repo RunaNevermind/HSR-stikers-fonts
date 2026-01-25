@@ -1,0 +1,704 @@
+
+*{
+    font-family: 'Bahnschrift', sans-serif;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    line-height:1.5em;
+}
+
+body{
+    background-color: #302d32;
+}
+
+.chat__container {
+    max-width: 720px;
+    width: 100%;
+    height: 713px;
+    border-radius: 0 40px 0 0;
+    display: flex;
+    flex-direction: column;
+    margin: 30px auto;
+    background-color: #d3d9dd;
+    position: relative;
+}
+
+.chat__container:after{
+    position: absolute;
+    content: " ";
+    top: 10px;
+    right: 10px;
+    height: 100%;
+    width: 100%;
+    border: 2px solid rgba(255, 255, 255, .135);
+    border-radius: 0 40px 0 0;
+    z-index: -1;
+}
+
+.title__container {
+    padding: 11.5px 34.5px 5px;
+    border-bottom:2px solid #c4c8cb;
+}
+
+.close__icon::after{
+    position: absolute;
+    content: url("https://github.com/RunaNevermind/HSR-stikers-fonts/raw/refs/heads/main/icons/close.png");
+    width: 35px;
+    height: 35px;
+    right: 34px;
+    top: 40px;
+    cursor: pointer;
+}
+
+.title__name {
+    font-weight: 600;
+    font-size: 28.06px;
+    line-height:42.09px;
+    vertical-align:baseline;
+    letter-spacing:normal;
+    word-spacing:0px;
+    color:#121212;
+}
+
+.title__text {
+    font-family: 'Bahnschrift', sans-serif;
+    font-size: 22px;
+    color: #686666cf;
+    font-weight: 600;
+    max-width: 100%;
+    padding-right: 37px;
+}
+
+.main {
+    box-sizing: content-box;
+    margin: 23px 16px 23px 34.5px;
+    padding-right: 20px;
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+}
+
+.main::-webkit-scrollbar{
+    width: 5px;
+    height: 8px;
+    background-color: #c3c3c3;
+}
+
+.main::-webkit-scrollbar-thumb {
+  background: #565656;
+}
+
+.companion {
+    padding: 0 0 35px 0;
+    display: flex;
+    font-size: 20px;
+    color: #666868;
+    font-weight: 500;
+}
+.companion__avatar {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    background-color: #363b37;
+    display: inline-block;
+
+    /* ключевое */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.companion__text {
+    margin-left: 23px;
+    font-size: 21px;
+    font-weight: 700;
+    color: #121212;
+}
+
+.companion__name {
+    color: #686666cf;
+    margin-bottom: 6px;
+    font-size: 24px;
+    font-weight: 500;
+}
+
+.companion__message {
+    width: fit-content;
+    background-color: #ededed;
+    border-radius: 2px 20px 20px;
+    box-shadow: -1px 2px #9ea0a1;
+    padding: 11.5px 23px;
+    font-weight: 600;
+    max-width: 530px;
+}
+
+.companion__message:not(:first-child):not(:nth-child(2)){
+    margin-top: 20px;
+}
+
+.companion__stiker{
+    width: 150px;
+    height: 150px;
+    margin-top: 20px;
+}
+
+.pov {
+    display: flex;
+    padding: 0 0 35px 0;
+    justify-content: flex-end;
+    font-weight: 500;
+}
+.pov__avatar {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    background-color: #363b37;
+}
+.pov__text {
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    margin-right: 23px;
+    font-size: 21px;
+    font-weight: 700;
+    color: #121212;
+    align-items: flex-end;
+}
+.pov__name {
+    color: #686666cf;
+    font-weight: 500;
+    margin-bottom: 6px;
+    font-size: 24px;
+    display: flex;
+    justify-content: end;
+}
+.pov__message {
+    width: fit-content;
+    background-color: #ddcaa5;;
+    border-radius: 20px 2px 20px 20px;
+    box-shadow: -1px 2px #9ea0a1;
+    padding: 11.5px 23px;
+    font-weight: 600;
+    max-width: 530px;
+}
+
+.pov__message:not(:first-child):not(:nth-child(2)){
+    margin-top: 20px;
+}
+
+.pov__stiker{
+    width: 150px;
+    height: 150px;
+}
+
+.loading{
+    content: url("https://github.com/RunaNevermind/HSR-stikers-fonts/raw/refs/heads/main/icons/loading.png");
+    width: 96px;
+}
+
+.gray__border {
+    border: 1px solid #c4c8cb;
+    margin: 0 0 35px 0;
+}
+.alert {
+    font-family: 'Bahnschrift', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    color: #858586e3;
+    font-size: 20px;
+    font-weight: 600;
+    margin: 0 0 35px 0;
+}
+
+.alert::before {
+    content: url("https://github.com/RunaNevermind/HSR-stikers-fonts/raw/refs/heads/main/icons/hsr_action.png");
+    width: 35px;
+    height: 30px;
+    margin-right: 5px;
+}
+
+.dialoque__options {
+    display: flex;
+    flex-direction: column;
+    background-color: #cbcfd0;
+    text-align: center !important;
+    padding: 23px 55.5px;
+    border-top: 2px solid #c4c8cb;
+}
+
+.option:not(:last-child){
+    margin-bottom: 11.5px;
+}
+
+.option {
+    display: flex;
+    justify-content: center;
+        align-items: center;
+    background-color: #ededed;
+    padding: 2px 20px 2px;
+    width: 100%;
+    border: 1px solid #AEB2B5;
+    box-shadow: 2px 2px 3px #66686896;
+    font-size: 1.05rem;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+@media (max-width:800px) {
+    .chat__container{
+        display: flex;
+        box-sizing: border-box;
+        margin: 30px;
+        width: auto;
+    }
+}
+
+@media (max-width:550px) {
+    .chat__container{
+        margin: 30px 0;
+        width: 100%;
+        border-radius: 0;
+    }
+
+    .close__icon:after{
+        display: none;
+    }
+
+    .title__text{
+        max-width: 100%;
+        padding: 0;
+    }
+
+    .title__container {
+        padding: 11.5px 15.5px 5px;
+    }
+}
+
+@media (max-width:350px) {
+    .companion__avatar, .pov__avatar{
+        display: none;
+    }
+
+    .dialoque__options{
+        padding: 23px;
+    }
+
+    .main{
+        margin: 23px 16px 16px;
+    }
+}
+
+
+
+/* *** Stikers *** */
+
+
+
+.cash_in{
+    content: url("https://raw.githubusercontent.com/RunaNevermind/HSR-stikers-fonts/main/stikers/pom-pom/cash_in.png");
+}
+
+.chef{
+    content: url("https://raw.githubusercontent.com/RunaNevermind/HSR-stikers-fonts/main/stikers/pom-pom/chef.png");
+}
+
+.crying{
+    content: url("https://raw.githubusercontent.com/RunaNevermind/HSR-stikers-fonts/main/stikers/pom-pom/crying.png");
+}
+
+.curious{
+    content: url("https://raw.githubusercontent.com/RunaNevermind/HSR-stikers-fonts/main/stikers/pom-pom/curious.png");
+}
+
+.depression{
+    content: url("https://raw.githubusercontent.com/RunaNevermind/HSR-stikers-fonts/main/stikers/pom-pom/depression.png");
+}
+
+.finger_heart{
+    content: url("https://raw.githubusercontent.com/RunaNevermind/HSR-stikers-fonts/main/stikers/pom-pom/finger_heart.png");
+}
+
+.gift{
+    content: url("https://raw.githubusercontent.com/RunaNevermind/HSR-stikers-fonts/main/stikers/pom-pom/gift.png");
+}
+
+.hey{
+    content: url("https://raw.githubusercontent.com/RunaNevermind/HSR-stikers-fonts/main/stikers/pom-pom/hey.png");
+}
+
+.like{
+    content: url("https://raw.githubusercontent.com/RunaNevermind/HSR-stikers-fonts/main/stikers/pom-pom/like.png");
+}
+
+.no_no{
+    content: url("https://raw.githubusercontent.com/RunaNevermind/HSR-stikers-fonts/main/stikers/pom-pom/no_no.png");
+}
+
+.nom{
+    content: url("https://raw.githubusercontent.com/RunaNevermind/HSR-stikers-fonts/main/stikers/pom-pom/nom.png");
+}
+
+.overtime{
+    content: url("https://raw.githubusercontent.com/RunaNevermind/HSR-stikers-fonts/main/stikers/pom-pom/overtime.png");
+}
+
+.pay_attention{
+    content: url("https://raw.githubusercontent.com/RunaNevermind/HSR-stikers-fonts/main/stikers/pom-pom/pay_attention.png");
+}
+
+.proud{
+    content: url("https://raw.githubusercontent.com/RunaNevermind/HSR-stikers-fonts/main/stikers/pom-pom/proud.png");
+}
+
+.puzzled{
+    content: url("https://raw.githubusercontent.com/RunaNevermind/HSR-stikers-fonts/main/stikers/pom-pom/puzzled.png");
+}
+
+.shame{
+    content: url("https://raw.githubusercontent.com/RunaNevermind/HSR-stikers-fonts/main/stikers/pom-pom/shame.png");
+}
+
+.shoked{
+    content: url("https://raw.githubusercontent.com/RunaNevermind/HSR-stikers-fonts/main/stikers/pom-pom/shoked.png");
+}
+
+.shy{
+    content: url("https://raw.githubusercontent.com/RunaNevermind/HSR-stikers-fonts/main/stikers/pom-pom/shy.png");
+}
+
+.trailblaze{
+    content: url("https://raw.githubusercontent.com/RunaNevermind/HSR-stikers-fonts/main/stikers/pom-pom/trailblaze.png");
+}
+
+.understood{
+    content: url("https://raw.githubusercontent.com/RunaNevermind/HSR-stikers-fonts/main/stikers/pom-pom/understood.png");
+}
+
+.yay{
+    content: url("https://raw.githubusercontent.com/RunaNevermind/HSR-stikers-fonts/main/stikers/pom-pom/yay.png");
+}
+
+
+
+/* *** Avatars *** */
+
+
+
+.Acheron{
+    content: url("https://raw.githubusercontent.com/RunaNevermind/HSR-stikers-fonts/main/avatars/Character_Acheron_Icon.png");
+}
+
+.Aglaea{
+    content: url("https://raw.githubusercontent.com/RunaNevermind/HSR-stikers-fonts/main/avatars/Character_Aglaea_Icon.png");
+}
+
+.Anaxa{
+    content: url("https://raw.githubusercontent.com/RunaNevermind/HSR-stikers-fonts/main/avatars/Character_Anaxa_Icon.png");
+}
+
+.Archer{
+    content: url("https://raw.githubusercontent.com/RunaNevermind/HSR-stikers-fonts/main/avatars/Character_Archer_Icon.png");
+}
+
+.Argenti{
+    content: url("https://raw.githubusercontent.com/RunaNevermind/HSR-stikers-fonts/main/avatars/Character_Argenti_Icon.png");
+}
+
+.Aventurine{
+    content: url("https://raw.githubusercontent.com/RunaNevermind/HSR-stikers-fonts/main/avatars/Character_Aventurine_Icon.png");
+}
+
+.Bailu{
+    content: url("https://raw.githubusercontent.com/RunaNevermind/HSR-stikers-fonts/main/avatars/Character_Bailu_Icon.png");
+}
+
+.BlackSwan{
+    content: url("https://raw.githubusercontent.com/RunaNevermind/HSR-stikers-fonts/main/avatars/Character_Black_Swan_Icon.png");
+}
+
+.Blade{
+    content: url("https://raw.githubusercontent.com/RunaNevermind/HSR-stikers-fonts/main/avatars/Character_Blade_Icon.png");
+}
+
+.Boothill{
+    content: url("https://raw.githubusercontent.com/RunaNevermind/HSR-stikers-fonts/main/avatars/Character_Boothill_Icon.png");
+}
+
+.Bronya{
+    content: url("https://raw.githubusercontent.com/RunaNevermind/HSR-stikers-fonts/main/avatars/Character_Bronya_Icon.png");
+}
+
+.Caelus_Destruction{
+    content: url("https://raw.githubusercontent.com/RunaNevermind/HSR-stikers-fonts/main/avatars/Character_Caelus_Destruction_Icon.png");
+}
+
+.Caelus_Harmony{
+    content: url("https://raw.githubusercontent.com/RunaNevermind/HSR-stikers-fonts/main/avatars/Character_Caelus_Harmony_Icon.png");
+}
+
+.Caelus_Preservation{
+    content: url("https://raw.githubusercontent.com/RunaNevermind/HSR-stikers-fonts/main/avatars/Character_Caelus_Preservation_Icon.png");
+}
+
+.Caelus_Remembrance{
+    content: url("https://raw.githubusercontent.com/RunaNevermind/HSR-stikers-fonts/main/avatars/Character_Caelus_Remembrance_Icon.png");
+}
+
+.Castorice{
+    content: url("https://raw.githubusercontent.com/RunaNevermind/HSR-stikers-fonts/main/avatars/Character_Castorice_Icon.png");
+}
+
+.Cerydra{
+    content: url("https://raw.githubusercontent.com/RunaNevermind/HSR-stikers-fonts/main/avatars/Character_Cerydra_Icon.png");
+}
+
+.Cipher{
+    content: url("https://raw.githubusercontent.com/RunaNevermind/HSR-stikers-fonts/main/avatars/Character_Cipher_Icon.png");
+}
+
+.Clara{
+    content: url("https://raw.githubusercontent.com/RunaNevermind/HSR-stikers-fonts/main/avatars/Character_Clara_Icon.png");
+}
+
+.Cyrena{
+    content: url("https://raw.githubusercontent.com/RunaNevermind/HSR-stikers-fonts/main/avatars/Character_Cyrena_Icon.png");
+}
+
+.DanHeng{
+    content: url("https://raw.githubusercontent.com/RunaNevermind/HSR-stikers-fonts/main/avatars/Character_Dan_Heng_Icon.png");
+}
+
+.DrRatio{
+    content: url("https://raw.githubusercontent.com/RunaNevermind/HSR-stikers-fonts/main/avatars/Character_Dr._Ratio_Icon.png");
+}
+
+.Feixiao{
+    content: url("https://raw.githubusercontent.com/RunaNevermind/HSR-stikers-fonts/main/avatars/Character_Feixiao_Icon.png");
+}
+
+.Firefly{
+    content: url("https://raw.githubusercontent.com/RunaNevermind/HSR-stikers-fonts/main/avatars/Character_Firefly_Icon.png");
+}
+
+.FuXuan{
+    content: url("https://raw.githubusercontent.com/RunaNevermind/HSR-stikers-fonts/main/avatars/Character_FuXuan_Icon.png");
+}
+
+.Fuque{
+    content: url("https://raw.githubusercontent.com/RunaNevermind/HSR-stikers-fonts/main/avatars/Character_Fuque_Icon.png");
+}
+
+.Gallagher{
+    content: url("https://raw.githubusercontent.com/RunaNevermind/HSR-stikers-fonts/main/avatars/Character_Gallagher_Icon.png");
+}
+
+.Gepard{
+    content: url("https://raw.githubusercontent.com/RunaNevermind/HSR-stikers-fonts/main/avatars/Character_Gepard_Icon.png");
+}
+
+.Guinaifen{
+    content: url("https://raw.githubusercontent.com/RunaNevermind/HSR-stikers-fonts/main/avatars/Character_Guinaifen_Icon.png");
+}
+
+.Hanya{
+    content: url("https://raw.githubusercontent.com/RunaNevermind/HSR-stikers-fonts/main/avatars/Character_Hanya_Icon.png");
+}
+
+.Herta{
+    content: url("https://raw.githubusercontent.com/RunaNevermind/HSR-stikers-fonts/main/avatars/Character_Herta_Icon.png");
+}
+
+.Himeko{
+    content: url("https://raw.githubusercontent.com/RunaNevermind/HSR-stikers-fonts/main/avatars/Character_Himeko_Icon.png");
+}
+
+.Hook{
+    content: url("https://raw.githubusercontent.com/RunaNevermind/HSR-stikers-fonts/main/avatars/Character_Hook_Icon.png");
+}
+
+.Huohuo{
+    content: url("https://raw.githubusercontent.com/RunaNevermind/HSR-stikers-fonts/main/avatars/Character_Huohuo_Icon.png");
+}
+
+.Hyacine{
+    content: url("https://raw.githubusercontent.com/RunaNevermind/HSR-stikers-fonts/main/avatars/Character_Hyacine_Icon.png");
+}
+
+.Hysilens{
+    content: url("https://raw.githubusercontent.com/RunaNevermind/HSR-stikers-fonts/main/avatars/Character_Hysilens_Icon.png");
+}
+
+.Jade{
+    content: url("https://raw.githubusercontent.com/RunaNevermind/HSR-stikers-fonts/main/avatars/Character_Jade_Icon.png");
+}
+
+.Jiaoqiu{
+    content: url("https://raw.githubusercontent.com/RunaNevermind/HSR-stikers-fonts/main/avatars/Character_Jiaoqiu_Icon.png");
+}
+
+.JingYuan{
+    content: url("https://raw.githubusercontent.com/RunaNevermind/HSR-stikers-fonts/main/avatars/Character_Jing_Yuan_Icon.png");
+}
+
+.Jingliu{
+    content: url("https://raw.githubusercontent.com/RunaNevermind/HSR-stikers-fonts/main/avatars/Character_Jingliu_Icon.png");
+}
+
+.Kafka{
+    content: url("https://raw.githubusercontent.com/RunaNevermind/HSR-stikers-fonts/main/avatars/Character_Kafka_Icon.png");
+}
+
+.Lingsha{
+    content: url("https://raw.githubusercontent.com/RunaNevermind/HSR-stikers-fonts/main/avatars/Character_Lingsha_Icon.png");
+}
+
+.Luka{
+    content: url("https://raw.githubusercontent.com/RunaNevermind/HSR-stikers-fonts/main/avatars/Character_Luka_Icon.png");
+}
+
+.Luocha{
+    content: url("https://raw.githubusercontent.com/RunaNevermind/HSR-stikers-fonts/main/avatars/Character_Luocha_Icon.png");
+}
+
+.Lynx{
+    content: url("https://raw.githubusercontent.com/RunaNevermind/HSR-stikers-fonts/main/avatars/Character_Lynx_Icon.png");
+}
+
+.March7th{
+    content: url("https://raw.githubusercontent.com/RunaNevermind/HSR-stikers-fonts/main/avatars/Character_March_7th_Icon.png");
+}
+
+.Misha{
+    content: url("https://raw.githubusercontent.com/RunaNevermind/HSR-stikers-fonts/main/avatars/Character_Misha_Icon.png");
+}
+
+.Moze{
+    content: url("https://raw.githubusercontent.com/RunaNevermind/HSR-stikers-fonts/main/avatars/Character_Moze_Icon.png");
+}
+
+.Mydei{
+    content: url("https://raw.githubusercontent.com/RunaNevermind/HSR-stikers-fonts/main/avatars/Character_Mydei_Icon.png");
+}
+
+.Natasha{
+    content: url("https://raw.githubusercontent.com/RunaNevermind/HSR-stikers-fonts/main/avatars/Character_Natasha_Icon.png");
+}
+
+.Pela{
+    content: url("https://raw.githubusercontent.com/RunaNevermind/HSR-stikers-fonts/main/avatars/Character_Pela_Icon.png");
+}
+
+.Qingque{
+    content: url("https://raw.githubusercontent.com/RunaNevermind/HSR-stikers-fonts/main/avatars/Character_Qingque_Icon.png");
+}
+
+.Rappa{
+    content: url("https://raw.githubusercontent.com/RunaNevermind/HSR-stikers-fonts/main/avatars/Character_Rappa_Icon.png");
+}
+
+.Robin{
+    content: url("https://raw.githubusercontent.com/RunaNevermind/HSR-stikers-fonts/main/avatars/Character_Robin_Icon.png");
+}
+
+.RuanMei{
+    content: url("https://raw.githubusercontent.com/RunaNevermind/HSR-stikers-fonts/main/avatars/Character_Ruan_Mei_Icon.png");
+}
+
+.Saber{
+    content: url("https://raw.githubusercontent.com/RunaNevermind/HSR-stikers-fonts/main/avatars/Character_Saber_Icon.png");
+}
+
+.Sampo{
+    content: url("https://raw.githubusercontent.com/RunaNevermind/HSR-stikers-fonts/main/avatars/Character_Sampo_Icon.png");
+}
+
+.Seele{
+    content: url("https://raw.githubusercontent.com/RunaNevermind/HSR-stikers-fonts/main/avatars/Character_Seele_Icon.png");
+}
+
+.Serval{
+    content: url("https://raw.githubusercontent.com/RunaNevermind/HSR-stikers-fonts/main/avatars/Character_Serval_Icon.png");
+}
+
+.SilverWolf{
+    content: url("https://raw.githubusercontent.com/RunaNevermind/HSR-stikers-fonts/main/avatars/Character_Silver_Wolf_Icon.png");
+}
+
+.Sparkle{
+    content: url("https://raw.githubusercontent.com/RunaNevermind/HSR-stikers-fonts/main/avatars/Character_Sparkle_Icon.png");
+}
+
+.Stelle_Destructioin{
+    content: url("https://raw.githubusercontent.com/RunaNevermind/HSR-stikers-fonts/main/avatars/Character_Stelle_Destructioin_Icon.png");
+}
+
+.Stelle_Harmony{
+    content: url("https://raw.githubusercontent.com/RunaNevermind/HSR-stikers-fonts/main/avatars/Character_Stelle_Harmony_Icon.png");
+}
+
+.Stelle_Preservation{
+    content: url("https://raw.githubusercontent.com/RunaNevermind/HSR-stikers-fonts/main/avatars/Character_Stelle_Preservation_Icon.png");
+}
+.Stelle_Remembrance{
+    content: url("https://raw.githubusercontent.com/RunaNevermind/HSR-stikers-fonts/main/avatars/Character_Stelle_Remembrance_Icon.png");
+}
+
+.Sunday{
+    content: url("https://raw.githubusercontent.com/RunaNevermind/HSR-stikers-fonts/main/avatars/Character_Sunday_Icon.png");
+}
+
+.Sushang{
+    content: url("https://raw.githubusercontent.com/RunaNevermind/HSR-stikers-fonts/main/avatars/Character_Sushang_Icon.png");
+}
+
+.Dahlia{
+    content: url("https://raw.githubusercontent.com/RunaNevermind/HSR-stikers-fonts/main/avatars/Character_The_Dahlia_Icon.png");
+}
+
+.TheHerta{
+    content: url("https://raw.githubusercontent.com/RunaNevermind/HSR-stikers-fonts/main/avatars/Character_The_Herta_Icon.png");
+}
+
+.Tingyun{
+    content: url("https://raw.githubusercontent.com/RunaNevermind/HSR-stikers-fonts/main/avatars/Character_Tingyun_Icon.png");
+}
+
+.Topaz{
+    content: url("https://raw.githubusercontent.com/RunaNevermind/HSR-stikers-fonts/main/avatars/Character_Topaz_and_Numby_Icon.png");
+}
+
+.Tribbie{
+    content: url("https://raw.githubusercontent.com/RunaNevermind/HSR-stikers-fonts/main/avatars/Character_Tribbie_Icon.png");
+}
+
+.Welt{
+    content: url("https://raw.githubusercontent.com/RunaNevermind/HSR-stikers-fonts/main/avatars/Character_Welt_Icon.png");
+}
+
+.Xueyi{
+    content: url("https://raw.githubusercontent.com/RunaNevermind/HSR-stikers-fonts/main/avatars/Character_Xueyi_Icon.png");
+}
+
+.Yanging{
+    content: url("https://raw.githubusercontent.com/RunaNevermind/HSR-stikers-fonts/main/avatars/Character_Yanging_Icon.png");
+}
+
+.Yukong{
+    content: url("https://raw.githubusercontent.com/RunaNevermind/HSR-stikers-fonts/main/avatars/Character_Yukong_Icon.png");
+}
+
+.Yunli{
+    content: url("https://raw.githubusercontent.com/RunaNevermind/HSR-stikers-fonts/main/avatars/Character_Yunli_Icon.png");
+}
+
+.Astral_Express{
+    content: url("https://raw.githubusercontent.com/RunaNevermind/HSR-stikers-fonts/main/avatars/NPC_Astral_Express_Icon.png");
+}
+
+.Group{
+    content: url("https://raw.githubusercontent.com/RunaNevermind/HSR-stikers-fonts/main/avatars/NPC_Group_Icon.png");
+}
+
+.Anonymous{
+    content: url("https://raw.githubusercontent.com/RunaNevermind/HSR-stikers-fonts/main/avatars/Profile_Picture_None.png");
+}
